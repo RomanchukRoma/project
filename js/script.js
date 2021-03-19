@@ -75,11 +75,12 @@ showMyDB: function (hidden) {
 toggleVisibleMyDB: function() {
     if(personalMovieDB.privat){
         personalMovieDB.privat = false;
-    } else personalMovieDB.privat = true;
+    } else {
+        personalMovieDB.privat = true;
     }
 },
 
-function writeYourGenres() {
+writeYourGenres: function() {
     for (let i = 1; i < 2; i++) {
         let genre = prompt(`Ваш любимый жанр под номером ${i}`);
 
@@ -89,6 +90,7 @@ function writeYourGenres() {
         } else {
             personalMovieDB.genres[i - 1] = genre;
         }
+    }
 
     personalMovieDB.genres.forEach((item, i) => {
         console.log(`Любимый жанр ${i + 1} - это ${item}`);
